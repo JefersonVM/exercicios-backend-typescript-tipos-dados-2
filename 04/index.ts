@@ -15,7 +15,7 @@ type Usuario4 = {
   profissao?: string;
   endereco: Endereco4 | null;
 };
-type Endereco4 = { 
+type Endereco4 = {
   cep: string;
   rua: string;
   complemento?: string;
@@ -48,7 +48,7 @@ const atualizarUsuario4 = (cpf: number, dados: Usuario4): Usuario4 => {
     throw new Error("Usuário não encontrado");
   }
 
-//   Object.assign(usuarioEncontrado, dados);
+  //   Object.assign(usuarioEncontrado, dados);
 
   const usuarioAtualizado = {
     ...usuarioEncontrado,
@@ -81,12 +81,12 @@ const detalharUsuario4 = (cpf: number): Usuario4 => {
 };
 
 const excluirUsuario4 = (cpf: number): void => {
-    const usuarios = lerArquivo4() as Usuario4[];
-    
-    const listaAtualizada = usuarios.filter((usuario) => usuario.cpf !== cpf);
-    
-    escreverArquivo4(listaAtualizada);
-    };
+  const usuarios = lerArquivo4() as Usuario4[];
+
+  const listaAtualizada = usuarios.filter((usuario) => usuario.cpf !== cpf);
+
+  escreverArquivo4(listaAtualizada);
+};
 
 // cadastrarUsuario3({
 //   nome: "Jeferson Vieira",
